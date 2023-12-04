@@ -6,10 +6,13 @@ build_script:
 - dotnet build -c Release
 - dotnet test -c Release
 after_build:
-- dotnet pack .\src\Yodlee.ApiClient\Yodlee.ApiClient.csproj -o ../../output -c Release --no-build
+- dotnet pack .\src\Yodlee.ApiClient\Yodlee.ApiClient.csproj -c Release --no-build
 deploy:
   provider: NuGet
   api_key:
     secure: eSaw72CvFo93qmqqQ6m6Mppjjd18oaUC9ZgaOl1LKuw=
   skip_symbols: false
   artifact: /.*(\.|\.s)nupkg/
+
+artifacts:
+  - path: '**\*.nupkg'
