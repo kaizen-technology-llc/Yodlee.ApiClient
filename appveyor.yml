@@ -9,6 +9,7 @@ after_build:
 - dotnet pack .\src\Yodlee.ApiClient\Yodlee.ApiClient.csproj -c Release --no-build
 deploy:
   provider: NuGet
+  server: https://ci.appveyor.com/nuget/max-lancaster-58kr5h0o2ww3/api/v2/package
   api_key:
     secure: eSaw72CvFo93qmqqQ6m6Mppjjd18oaUC9ZgaOl1LKuw=
   skip_symbols: false
